@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="cache-control" content="no-store" />
+	<meta http-equiv="expires" content="0" />
+	<title>联合贷业务放款统计</title>
+	<link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
+	<link href="css/unionLoan.css" rel="stylesheet">
+	<script src="js/jquery.1.7.2.min.js"></script>
+	<script src="js/echarts.min.js" charset="utf-8"></script>
+    <script src="js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="js/jquery-ui/jquery.ui.touch-punch.min.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.js"></script>
+	<script src="js/clandar.js" charset="utf-8"></script>
+	<script src="../../js/common-wjc/wjcDemo.js" charset="utf-8"></script>
+	<script src="js/unionLoan.js" charset="utf-8"></script>
+</head>
+<body>
+    <!-- 模态框 -->
+    <div class="modal fade bs-example-modal-sm text-center" tabindex="-1" role="dialog" aria-labelledby="LoadingModel" id="LoadingModel">
+	  <div class="modal-dialog modal-sm center-block" style="margin-top:65%;">
+		<img src="../../img/baoziLoading.gif" id="Loading_img" style="width:100px">
+		<div style="color:#ccc;font-size:12px">努力加载中…</div> 
+	  </div>
+	</div>
+<!-- 	<div class="nav_top">	
+		<img src="../../img/fh-icon@3x.png">
+		<span>联合贷业务放款统计</span>
+	</div> -->
+	<div class="fortyPre">
+	    <div class=" nineTypre block" >
+	            <span class="left">
+	                <span class="font16 bold showYearFade" id="chineseText" ></span>
+	              	<span class="divisionLine" id="divisionLine"> / </span>
+	                <span class="font12 showConditionFade" id="dateText" ></span>
+	            </span>
+	            <span class="right" id="click">
+	                <img src="../../img/calendar@3x.png" alt="" class="claTip"/>
+	            </span>
+	    </div>
+	</div>
+	<div id="barContent">
+		<div id="barDiv" class="barDiv"></div>
+		<label id="overDateLabel"></label>
+	</div>
+	<h4 id="sum_financ_amount"></h4>
+	<div id="tableContent">
+		<table>
+			<thead>
+				<tr>
+					<td>合作机构名称</td>
+					<td>易鑫放款金额</td>
+					<td>银行放款金额</td>
+					<td>放款总额</td>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+	<div class="PopupLayer"style="width: 100%;top:64px">
+    	<div class="slide_range">
+    		<div id="slider-range" class="slider"></div>
+            <!-- 快捷日期按钮 -->
+            <div class="text_center" id="rapidCullDate_ID">
+                <input class="radio_btn thisM" type="button" value="当天">
+                <input class="radio_btn thisM" type="button" value="本周">
+                <input class="radio_btn thisMonth" type="button" value="本月">
+                <input class="radio_btn thisQ" type="button" value="本季">
+                <input class="radio_btn thisBY" type="button" value="半年">
+                <input class="radio_btn thisY" type="button" value="本年">
+            </div>
+           	<span id="slider-range-amount" ></span>
+            <p><span class='select' id='select'>选择</span>按起始日选择</p>
+        </div>
+        <a class="close" id="confirmBtn">确定</a>
+	</div>
+</body>
+</html>
